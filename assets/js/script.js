@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const clearAllBtn = document.getElementById('clearAllBtn');
   const syncAllBtn = document.getElementById('syncAllBtn');
   const currentTimeEl = document.getElementById('currentTime');
+  const scriptURL = "https://script.google.com/macros/s/AKfycbwyPj3iGRxUYCiRfOoKRzQhxeTbUxIkngr7QnPRCeWCd03I0wyLDhEQKn1hKP4WX-QeeA/exec";
 
   let bills = JSON.parse(localStorage.getItem('bills')) || [];
 
