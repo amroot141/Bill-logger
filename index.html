@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bill Logger</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Bill Logger</h1>
+    <div class="current-time" id="currentTime"></div>
+
+    <div class="form-container">
+      <div class="input-group">
+        <label for="customerName">Item Name</label>
+        <input type="text" id="customerName" />
+      </div>
+      <div class="input-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" />
+      </div>
+      <div class="input-group">
+        <label for="paymentMode">Payment Mode</label>
+        <select id="paymentMode">
+          <option value="cash">Cash</option>
+          <option value="online">Online</option>
+        </select>
+      </div>
+      <div class="action-buttons">
+        <button class="btn-primary" id="addBillBtn">Add Bill</button>
+        <button class="btn-secondary" id="syncAllBtn">Sync All to Sheets</button>
+        <button class="btn-danger" id="clearAllBtn">Clear All</button>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-item"><span>Total Bills</span><span id="billsCount">0</span></div>
+      <div class="summary-item"><span>Total Amount</span><span id="totalAmount">₹0</span></div>
+    </div>
+
+    <div class="payment-summary">
+      <h3>Payment Summary</h3>
+      <div class="summary-row"><span>Cash</span><span id="cashTotal">₹0</span></div>
+      <div class="summary-row"><span>Online</span><span id="onlineTotal">₹0</span></div>
+      <div class="summary-row"><strong>Total</strong><strong id="totalBills">₹0</strong></div>
+    </div>
+
+    <div class="bills-table-container">
+      <table id="billsTable">
+        <thead>
+          <tr><th>Item</th><th>Amount</th><th>Mode</th><th>Time</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
