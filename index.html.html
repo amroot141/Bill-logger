@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Bill Logger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Bill Logger</h1>
+
+    <div class="current-time" id="currentTime"></div>
+
+    <div class="form-container">
+      <div class="input-group">
+        <label for="customerName">Item Name:</label>
+        <input type="text" id="customerName" placeholder="Enter item name" />
+      </div>
+
+      <div class="input-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" placeholder="0.00" min="0" step="0.01" />
+      </div>
+
+      <div class="input-group">
+        <label>Mode of Payment:</label>
+        <select id="paymentMode">
+          <option value="cash">Cash</option>
+          <option value="online">Online</option>
+        </select>
+      </div>
+
+      <button id="addBillBtn" class="btn-primary">Add Bill</button>
+    </div>
+
+    <div class="action-buttons">
+      <button id="syncAllBtn" class="btn-secondary">Sync All to Sheets</button>
+      <button id="clearAllBtn" class="btn-danger">Clear All Bills</button>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-item">
+        <span>Total:</span>
+        <span id="totalAmount">₹0.00</span>
+      </div>
+      <div class="summary-item">
+        <span>Bills Today:</span>
+        <span id="billsCount">0</span>
+      </div>
+    </div>
+
+    <!-- Floating Payment Summary -->
+    <div class="payment-summary">
+      <h3>Payment Summary</h3>
+      <div class="summary-row">
+        <span>Total Bills:</span>
+        <span id="totalBills">₹0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Cash Payments:</span>
+        <span id="cashTotal">₹0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Online Payments:</span>
+        <span id="onlineTotal">₹0.00</span>
+      </div>
+    </div>
+
+    <div class="bills-table-container">
+      <h2>Today's Bills</h2>
+      <table id="billsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Payment</th>
+            <th>Time</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Virtual Keyboard -->
+  <div class="virtual-keyboard" id="virtualKeyboard">
+    <div class="keyboard-keys"></div>
+    <button class="btn-secondary keyboard-close">Close</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
