@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const virtualKeyboard = document.getElementById('virtualKeyboard');
     const keyboardKeys = document.querySelector('.keyboard-keys');
 
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz46wO_f2S7pzuMs143cfdwflK2kAXSupmlFRX1gd55dePe3XbPZnEeJKdaun7CxujD/exec'; // Replace with your own
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzSk4F4TVu1E7aWQHOqTGLUHtZsLK1jZICdHg403ApR6DBxiuNZcQhk3QIv8PBDkb_Y/exec; // Replace with your own
 
     let bills = JSON.parse(localStorage.getItem('bills')) || [];
     let activeInput = null;
